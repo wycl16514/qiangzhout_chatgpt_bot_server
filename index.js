@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { Configuration, OpenAIApi } from "openai";
 import openAiRoutes from "./routes/openai.js"
+import authRoute from "./routes/auth.js"
 
 const configuration = new Configuration(
     {
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use(helmet())
 app.use('/openai', openAiRoutes);
+app.use('/auth', authRoute);
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
