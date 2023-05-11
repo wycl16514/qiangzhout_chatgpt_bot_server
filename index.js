@@ -8,6 +8,7 @@ import { Configuration, OpenAIApi } from "openai";
 import openAiRoutes from "./routes/openai.js"
 import authRoute from "./routes/auth.js"
 
+
 const configuration = new Configuration(
     {
         apiKey: process.env.OPENAI_API_KEY,
